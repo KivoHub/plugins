@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kivohub-pesquisa-de-leis",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Texto oficial de artigos de lei federal brasileira, súmulas e temas do STF, STJ e TST, com o link da fonte.",
   "author": {
     "name": "KivoHub",
@@ -13,7 +13,7 @@
     "com.openai": {
       "interface": {
         "displayName": "Pesquisa de leis (KivoHub)",
-        "shortDescription": "Artigos, súmulas e temas com a fonte oficial",
+        "shortDescription": "Leis, súmulas e temas oficiais",
         "longDescription": "Consulta o texto de artigos da Constituição e dos principais códigos federais, súmulas do STF, STJ e TST e temas repetitivos e de repercussão geral, com o link oficial. Cada resultado informa se o texto foi conferido no Planalto, está em revisão ou foi revogado. É uma ferramenta de pesquisa: não dá parecer nem orientação sobre casos concretos. Não exige conta e não envia mensagens, não processa pagamentos e não gera imagens, áudio ou vídeo.",
         "developerName": "KivoHub",
         "category": "Productivity",
@@ -60,6 +60,12 @@
               "prompt": "Em qual lei está o prazo para reclamar de vício aparente em produto?",
               "tools_triggered": "search_legislation, get_provision",
               "expected_behavior": "Encontra o art. 26 do CDC e cita o texto com o link oficial."
+            },
+            {
+              "description": "Tema do STF",
+              "prompt": "Qual a tese do Tema 1 da repercussão geral do STF?",
+              "tools_triggered": "get_precedent",
+              "expected_behavior": "Devolve a tese firmada do tema com o link do portal do STF; temas sem tese firmada informam a situação."
             }
           ],
           "negative": [
