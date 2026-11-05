@@ -2,11 +2,21 @@
   "name": "pesquisa-de-leis",
   "version": "1.0.1",
   "description": "Texto oficial de artigos de lei, súmulas e temas do STF, STJ e TST, com o link da fonte.",
-  "author": { "name": "KivoHub", "url": "https://kivohub.ai" },
+  "author": {
+    "name": "KivoHub",
+    "url": "https://kivohub.ai"
+  },
   "homepage": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
   "repository": "https://github.com/KivoHub/plugins",
   "license": "MIT",
-  "keywords": ["leis", "legislação", "jurídico", "súmulas", "brasil"],
+  "keywords": [
+    "leis",
+    "legislação",
+    "jurídico",
+    "súmulas",
+    "brasil"
+  ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.claude.json"
+  "mcpServers": "./.mcp.claude.json",
+  "privacyPolicyUrl": "https://kivohub.ai/privacidade#pesquisa-de-leis"
 }
