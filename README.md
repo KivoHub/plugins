@@ -16,7 +16,7 @@ conferido, está em revisão ou foi revogado.
 /plugin install pesquisa-de-leis@kivohub
 ```
 
-Só o servidor, sem o plugin: `claude mcp add --transport http kivohub-leis https://leis.kivohub.ai/mcp`
+Só o servidor, sem o plugin: `claude mcp add --transport http kivohub-leis "https://leis.kivohub.ai/mcp?src=claude-code"`
 
 ### Codex
 
@@ -25,7 +25,7 @@ codex plugin marketplace add KivoHub/plugins
 codex plugin add pesquisa-de-leis@kivohub
 ```
 
-Só o servidor, sem o plugin: `codex mcp add kivohub-leis --url https://leis.kivohub.ai/mcp`
+Só o servidor, sem o plugin: `codex mcp add kivohub-leis --url "https://leis.kivohub.ai/mcp?src=codex"`
 
 ### ChatGPT, Claude.ai e outros clientes MCP
 
