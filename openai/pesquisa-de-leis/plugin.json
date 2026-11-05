@@ -1,0 +1,94 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kivohub-pesquisa-de-leis",
+  "version": "1.0.2",
+  "description": "Texto oficial de artigos de lei federal brasileira, súmulas e temas do STF, STJ e TST, com o link da fonte.",
+  "author": {
+    "name": "KivoHub",
+    "email": "contato@kivohub.ai",
+    "url": "https://kivohub.ai"
+  },
+  "homepage": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Pesquisa de leis (KivoHub)",
+        "shortDescription": "Leis, súmulas e temas oficiais",
+        "longDescription": "Consulta o texto de artigos da Constituição e dos principais códigos federais, súmulas do STF, STJ e TST e temas repetitivos e de repercussão geral, com o link oficial. Cada resultado informa se o texto foi conferido no Planalto, está em revisão ou foi revogado. É uma ferramenta de pesquisa: não dá parecer nem orientação sobre casos concretos. Não exige conta e não envia mensagens, não processa pagamentos e não gera imagens, áudio ou vídeo.",
+        "developerName": "KivoHub",
+        "category": "Productivity",
+        "capabilities": [
+          "Consultar artigos de lei",
+          "Consultar súmulas e temas",
+          "Buscar por assunto"
+        ],
+        "websiteURL": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
+        "supportURL": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
+        "privacyPolicyURL": "https://kivohub.ai/privacidade#pesquisa-de-leis",
+        "termsOfServiceURL": "https://kivohub.ai/termos#pesquisa-de-leis",
+        "defaultPrompt": [
+          "O que diz o art. 11 da CLT?",
+          "Qual a tese do Tema 677 do STJ?",
+          "Em qual lei está o prazo para reclamar de vício aparente?"
+        ],
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Artigo citado",
+              "prompt": "O que diz o art. 11 da CLT?",
+              "tools_triggered": "get_provision",
+              "expected_behavior": "Devolve o caput e os parágrafos do art. 11 com o link do Planalto; incisos revogados aparecem como revogados."
+            },
+            {
+              "description": "Súmula",
+              "prompt": "Qual o texto da Súmula 331 do TST?",
+              "tools_triggered": "get_precedent",
+              "expected_behavior": "Devolve o enunciado atual com o aviso de itens cancelados e o link da fonte."
+            },
+            {
+              "description": "Tema com tribunal",
+              "prompt": "Qual a tese do Tema 677 do STJ?",
+              "tools_triggered": "get_precedent",
+              "expected_behavior": "Devolve a questão e a tese firmada do tema do STJ."
+            },
+            {
+              "description": "Pergunta por assunto",
+              "prompt": "Em qual lei está o prazo para reclamar de vício aparente em produto?",
+              "tools_triggered": "search_legislation, get_provision",
+              "expected_behavior": "Encontra o art. 26 do CDC e cita o texto com o link oficial."
+            },
+            {
+              "description": "Tema do STF",
+              "prompt": "Qual a tese do Tema 1 da repercussão geral do STF?",
+              "tools_triggered": "get_precedent",
+              "expected_behavior": "Devolve a tese firmada do tema com o link do portal do STF; temas sem tese firmada informam a situação."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Parecer sobre caso concreto. Deve citar a lei e indicar procurar um advogado, sem dizer se a pessoa tem direito.",
+              "prompt": "Fui demitido há um ano, tenho direito a processar a empresa?"
+            },
+            {
+              "description": "Lei fora da base. Deve dizer que não encontrou, sem inventar texto.",
+              "prompt": "Qual o texto do art. 5º do Código de Trânsito Brasileiro?"
+            },
+            {
+              "description": "Texto em revisão. Não deve reproduzir o conteúdo, só indicar o link oficial.",
+              "prompt": "Qual o texto do art. 394-A, inciso II, da CLT?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Não vende produtos, não transfere valores e não processa pagamentos."
+      },
+      "publication": {
+        "release_notes": "Primeira versão: consulta de artigos, súmulas e temas, e busca por assunto, em servidor MCP público e anônimo."
+      }
+    }
+  }
+}
