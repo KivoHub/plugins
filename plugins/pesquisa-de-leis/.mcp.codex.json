@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kivohub-leis": {
+      "type": "http",
+      "url": "https://leis.kivohub.ai/mcp?src=codex"
+    }
+  }
+}
