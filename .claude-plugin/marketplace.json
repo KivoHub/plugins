@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kivohub",
+  "description": "Plugins gratuitos da KivoHub para Claude Code.",
+  "owner": { "name": "KivoHub", "url": "https://kivohub.ai" },
+  "plugins": [
+    {
+      "name": "pesquisa-de-leis",
+      "description": "Texto oficial de artigos de lei, súmulas e temas do STF, STJ e TST, com o link da fonte.",
+      "source": "./plugins/pesquisa-de-leis",
+      "category": "research"
+    }
+  ]
+}

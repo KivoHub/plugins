@@ -1,0 +1,30 @@
+{
+  "name": "pesquisa-de-leis",
+  "version": "1.0.0",
+  "description": "Texto oficial de artigos de lei, súmulas e temas do STF, STJ e TST, com o link da fonte.",
+  "author": { "name": "KivoHub", "url": "https://kivohub.ai" },
+  "homepage": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
+  "repository": "https://github.com/KivoHub/plugins",
+  "license": "MIT",
+  "keywords": ["leis", "legislação", "jurídico", "súmulas", "brasil"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Pesquisa de leis (KivoHub)",
+    "shortDescription": "Artigos, súmulas e temas com a fonte oficial",
+    "longDescription": "Consulta o texto de artigos da Constituição e dos principais códigos federais, súmulas do STF, STJ e TST e temas repetitivos e de repercussão geral, com o link oficial. É uma ferramenta de pesquisa: não dá parecer nem orientação sobre casos.",
+    "developerName": "KivoHub",
+    "category": "Research",
+    "capabilities": ["Consulta de legislação", "Consulta de precedentes"],
+    "websiteURL": "https://kivohub.ai/ferramentas/pesquisa-de-leis-whatsapp",
+    "privacyPolicyURL": "https://kivohub.ai/privacidade#pesquisa-de-leis",
+    "termsOfServiceURL": "https://kivohub.ai/termos",
+    "defaultPrompt": [
+      "O que diz o art. 11 da CLT?",
+      "Qual a tese do Tema 677 do STJ?",
+      "Em que lei está o prazo para reclamar de vício aparente?"
+    ],
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
+  }
+}
